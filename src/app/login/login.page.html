@@ -1,0 +1,31 @@
+<ion-card style="text-align: center;">
+  <ion-card-header>
+    <ion-card-title>Login</ion-card-title>
+    <ion-card-subtitle>Inicio de secion Parquimetro</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+     <form [formGroup]="credentialsForm" (ngSubmit)="loginUser()">
+        <ion-list>
+          <ion-item class="item">
+              <ion-icon name="contact" class="icon"></ion-icon>
+              <ion-input type="email" formControlName="user" placeholder="Usuario" ></ion-input>
+          </ion-item>
+        
+          <ion-item class="item">
+              <ion-icon name="key" class="icon"></ion-icon>
+              <ion-input type="password" formControlName="password" placeholder="Password" ></ion-input>
+          </ion-item>
+            
+          </ion-list> 
+        
+            <ion-button shape="round" color="primary" type="submit" [disabled]="!credentialsForm.valid">Login</ion-button>
+        
+        </form>
+        <ion-footer>
+          <ion-toolbar>
+            <ion-label color="#939799" style="font-size: 12px !important;">Create by <a class="linkteamsdk" href="http://teamsdk.com/">TeamSDK</a></ion-label>
+          </ion-toolbar>
+        </ion-footer>
+  </ion-card-content>
+  
+</ion-card>
