@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="login" color="primary"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item-group>
+    <ion-item-divider>
+      <ion-label>Datos Principales</ion-label>
+    </ion-item-divider>
+    <ion-item>
+      <ion-label position="floating">Nombre Completo</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Direccion</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Telefono</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider>
+      <ion-label>Datos de Cobro</ion-label>
+    </ion-item-divider>
+    <ion-item>
+      <ion-label position="floating">Tipo de Tarjeta</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Direccion</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Telefono</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider>
+      <ion-label>Datos de automovil</ion-label>
+    </ion-item-divider>
+    <ion-item>
+      <ion-label position="floating">Marca del vehículo</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Modelo</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Color Auto</ion-label>
+      <div class="input-color">
+        <color-circle
+          color="#fff"
+          [colors]="this.colores"
+          (onChangeComplete)="handleChangeColor($event)"
+        ></color-circle>
+        <!-- <color-compact color="#fff" (onChangeComplete)="handleChange($event)"></color-compact> -->
+      </div>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Numero de Placas</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider>
+      <ion-label>Tipo de cliente</ion-label>
+    </ion-item-divider>
+    <ion-radio-group>
+      <ion-item>
+        <ion-label>Premium</ion-label>
+        <ion-radio slot="start" value="premium" color="primary"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Frecuente</ion-label>
+        <ion-radio slot="start" value="frecuente" color="primary"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-item-group>
+</ion-content>

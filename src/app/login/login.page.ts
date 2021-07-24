@@ -1,11 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  FormGroup,
-  FormBuilder,
-  FormArray,
-  FormControl,
-  Validators
-} from '@angular/forms';
+import { Router } from "@angular/router";
+import {FormGroup,FormBuilder,FormArray,FormControl,Validators} from '@angular/forms';
 import { ToastController, Platform } from "@ionic/angular";
 import { Device } from '@capacitor/device';
 
@@ -19,7 +14,8 @@ export class LoginPage implements OnInit {
   U_ID:any;
 
   constructor(public toastController: ToastController,
-              public formBuilder: FormBuilder) {
+              public formBuilder: FormBuilder,
+              public router:Router) {
 
         this.credentialsForm = this.formBuilder.group({
           user: ["", [Validators.required, Validators.minLength(1)]],
@@ -35,6 +31,20 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
      this.DeviceUID();
+     this.logDeviceInfo();
+     this.logBatteryInfo();
+  }
+
+  async logDeviceInfo (){
+  const info = await Device.getInfo();
+
+  console.log(info);
+  }
+
+  async logBatteryInfo(){
+    const info = await Device.getBatteryInfo();
+
+    console.log(info);
   }
 
   async DeviceUID (){
@@ -45,5 +55,9 @@ export class LoginPage implements OnInit {
 
   async loginUser(){
 
+  }
+
+  onRegister(){
+    this.router.navigate(['register']);
   }
 }
