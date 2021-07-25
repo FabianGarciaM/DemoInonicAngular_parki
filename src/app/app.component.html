@@ -1,3 +1,24 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu contentId="main-content" type="overlay">
+    <ion-content>
+        <div class="menu-header-bg"></div>
+        <div class="header-content">
+          <div slot="end" routerLink="/perfil">
+            <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+          </div>
+          <img src="../assets/shapes.svg" alt="perfiluser">
+          <div class="divnames">
+            <ion-title class="name">Mr. Gustucru</ion-title>
+            <ion-label class="firstname">El hijo de gustucru</ion-label>
+          </div>
+        </div>
+        <ion-list class="menu-items" lines="none">
+          <ion-item *ngFor="let p of appPages">
+            <ion-icon [name]="p.icon"></ion-icon>
+            <ion-label>{{p.title}}</ion-label>
+          </ion-item>
+        </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main-content"></ion-router-outlet>
 </ion-app>

@@ -18,7 +18,7 @@
             
           </ion-list> 
         
-            <ion-button shape="round" color="primary" type="submit" [disabled]="!credentialsForm.valid">Login</ion-button>
+            <ion-button shape="round" color="primary" type="submit" [disabled]="!credentialsForm.valid" (click)="onLogin()">Login</ion-button>
         
         </form>
         <ion-footer>
